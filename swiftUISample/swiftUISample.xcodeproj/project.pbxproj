@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5ED0387A222D81C70084BD0E /* IGListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED03879222D81C70084BD0E /* IGListKit.framework */; };
 		8F381B9D221D10940053CD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F381B9C221D10940053CD9A /* AppDelegate.swift */; };
 		8F381B9F221D10940053CD9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F381B9E221D10940053CD9A /* ViewController.swift */; };
 		8F381BA2221D10940053CD9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F381BA0221D10940053CD9A /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5ED03879222D81C70084BD0E /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
 		8F381B99221D10940053CD9A /* swiftUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F381B9C221D10940053CD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F381B9E221D10940053CD9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED0387A222D81C70084BD0E /* IGListKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +61,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5ED03878222D81C60084BD0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5ED03879222D81C70084BD0E /* IGListKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8F381B90221D10940053CD9A = {
 			isa = PBXGroup;
 			children = (
 				8F381B9B221D10940053CD9A /* swiftUISample */,
 				8F381BB3221D10970053CD9A /* swiftUISampleTests */,
 				8F381B9A221D10940053CD9A /* Products */,
+				5ED03878222D81C60084BD0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +121,7 @@
 				8F381B95221D10940053CD9A /* Sources */,
 				8F381B96221D10940053CD9A /* Frameworks */,
 				8F381B97221D10940053CD9A /* Resources */,
+				5ED03877222D815A0084BD0E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -194,6 +207,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5ED03877222D815A0084BD0E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/IGListKit.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8F381B95221D10940053CD9A /* Sources */ = {
@@ -365,6 +399,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = swiftUISample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -382,6 +420,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = swiftUISample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
